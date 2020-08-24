@@ -1,2 +1,2 @@
 # monitoramento
-aplicação para monitoramento automatizado de modelos
+aplicação para monitoramento automatizado de modelos de machine learning
