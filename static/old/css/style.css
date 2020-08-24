@@ -1,0 +1,67 @@
+body{
+    margin: 0;
+}
+img{
+    width: 15%;
+}
+nav{
+    background-color: #CC092F;
+}
+
+/* LOGIN */
+/* Form */
+.content{
+    margin: auto;
+    width: 60%;
+    /*border-width: 10px;border-style: solid;*/
+}
+.title{
+    font-family: Bradesco;
+    font-size: 30px;
+    text-align: center;
+}
+form{
+    margin:auto;
+    width: 60%;
+    /*border-width: 10px;border-style: solid;*/
+}
+label{
+    text-align: center;
+    font-family: Bradesco;
+    display: block;
+    margin-top: 2%;
+    font-size: 15px;
+}
+form input{
+    display: block;
+    margin: auto;
+    width: 40%;
+}
+form button{
+    font-family: Bradesco;
+    margin-top: 10px;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    background-color: #cc092f;
+    color: #fff;
+    border-width: 0px;
+}
+
+
+
+/* Footer */
+footer{
+    background-color: #CC092F;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    
+}
+.footer-text{
+    font-family: Bradesco;
+    text-align: center;
+    display: block;
+    color: #fff;
+}

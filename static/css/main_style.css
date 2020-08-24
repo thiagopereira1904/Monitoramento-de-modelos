@@ -1,0 +1,35 @@
+@font-face {
+    font-family: Bradesco;
+    src: url("/fonts/BradescoSans-Regular.woff")
+}
+
+* {
+    font-family: Bradesco;
+}
+
+.bg_bradesco {
+    background: #CC092F;
+}
+
+.text_white {
+    color: white;
+}
+
+.title_form {
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.btn_bradesco{
+    background: #CC092F;
+    color: white;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #CC092F;
+    color: white;
+    text-align: center;
+}

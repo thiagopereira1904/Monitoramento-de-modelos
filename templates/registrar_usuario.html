@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %} Registrar Usuário{% endblock %}
+{% block content %}
+<div class="container justify-content-center shadow p-3 mb-5 bg-white rounded">
+    <p class="title_form">Registrar novo usuário:</p>
+    <form action="/registrar_usuario" method="POST">
+        {{ register.csrf_token }}
+        <div class="row">
+            <div class="col-lg-2">
+                <label for="">NºFunc:</label>
+                {{register.numeroFunc_usuario(class_="form-control")}}
+            </div>
+            <div class="col-lg-4">
+                <label for="">E-mail:</label>
+                {{register.email_usuario(class_="form-control")}}
+            </div>
+            <div class="col-lg-4">
+                <label for="">Nome:</label>
+                {{register.nome_usuario(class_="form-control")}}
+            </div>
+            <div class="col-lg-2">
+                <label for="">Função:</label>
+                {{ register.funcao_usuario(class_="form-control")}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">
+                <label for="inputEstado">Jornada:</label>
+                {{register.id_jornada(class_="form-control")}}
+            </div>
+            <div class="col-lg-2">
+                <label for="inputEstado">Tipo usuário:</label>
+                {{register.tipo_usuario(class_="form-control")}}
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col text-center">
+                <button type="submit" class="btn btn-customized btn_bradesco" style="width: 100px;">Salvar</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

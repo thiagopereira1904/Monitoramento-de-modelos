@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/bootstrap.min.css' )}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/main_style.css' )}}" type="text/css">
+    <style type="text/css">
+        @font-face {
+            font-family: Bradesco;
+            src: url("{{ url_for('static', filename= 'fonts/BradescoSans-Regular.woff' )}}");
+        }
+        *{
+            font-family: Bradesco;
+        }
+    </style>
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg_bradesco">
+        <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename= '/img/horizontal/HORIZONTAL/DIGITAL/Bradesco_H_White_RGB.png' )}}"
+                width="150px" style="margin-top: -13px;" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="{{ url_for('main.profile') }}">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Modelos Recorrentes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Listar modelos</a>
+                        <a class="dropdown-item" href="{{ url_for('main.registrar_modelo') }}">Registrar novo modelo</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Usuários
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Listar Usuários</a>
+                        <a class="dropdown-item" href="{{ url_for('main.registrar_usuario') }}">Registrar novo usuário</a>
+                    </div>
+                </li>
+                {% if current_user.is_authenticated %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{name}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ url_for('auth.logout') }}">Sair</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Configurações da conta</a>
+                    </div>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <div class="footer">
+            DGD - Bradesco 2020
+        </div>
+    </footer>
+    <!-- Links de js-->
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1.slim.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+</body>
+
+</html>

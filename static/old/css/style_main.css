@@ -1,0 +1,37 @@
+@font-face{
+    font-family: "Bradesco";
+    src: url("/static/fonts/BradescoSans-Regular.woff")
+  }
+
+body{
+    margin: 0;
+}
+nav{
+    width: 15%;
+    background-color: #CC092F;
+}
+
+.logo{
+    background-color: #CC092F;
+    width: 15%;
+}
+
+.logo img{
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    font-family: Bradesco;
+    font-size: 20px;
+    color: white;
+}
+
+.text_footer{
+    font-family: Bradesco;
+    text-align: center;
+    color: white;
+}
+.footer{
+    background: #CC092F;
+}
