@@ -2,41 +2,53 @@
 {% block title %} Registrar Usuário{% endblock %}
 {% block content %}
 <div class="container justify-content-center shadow p-3 mb-5 bg-white rounded">
-    <p class="title_form">Registrar novo usuário:</p>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show text-center" role="alert">
+                    <span>{{ message }}</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <p class="title_form">REGISTRAR NOVO USUÁRIO:</p>
     <form action="/registrar_usuario" method="POST">
         {{ register.csrf_token }}
         <div class="row">
             <div class="col-lg-2">
-                <label for="">NºFunc:</label>
-                {{register.numeroFunc_usuario(class_="form-control")}}
+                <label for="">Nº FUNCIONAL:</label>
+                {{register.numeroFunc_usuario(class_="form-control", maxlength="7", placeholder="xyyyyyy")}}
             </div>
-            <div class="col-lg-4">
-                <label for="">E-mail:</label>
-                {{register.email_usuario(class_="form-control")}}
+            <div class="col-lg-5">
+                <label for="">E-MAIL:</label>
+                {{register.email_usuario(class_="form-control", maxlength="50", placeholder="nome@bradesco.com.br")}}
             </div>
-            <div class="col-lg-4">
-                <label for="">Nome:</label>
-                {{register.nome_usuario(class_="form-control")}}
-            </div>
-            <div class="col-lg-2">
-                <label for="">Função:</label>
-                {{ register.funcao_usuario(class_="form-control")}}
+            <div class="col-lg-5">
+                <label for="">NOME:</label>
+                {{register.nome_usuario(class_="form-control", maxlength="50", placeholder="nome completo")}}
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-2">
-                <label for="inputEstado">Jornada:</label>
+            <div class="col-lg-3">
+                <label for="">FUNÇÃO:</label>
+                {{ register.funcao_usuario(class_="form-control")}}
+            </div>
+            <div class="col-lg-3">
+                <label for="">JORNADA:</label>
                 {{register.id_jornada(class_="form-control")}}
             </div>
-            <div class="col-lg-2">
-                <label for="inputEstado">Tipo usuário:</label>
+            <div class="col-lg-3">
+                <label for="">TIPO USUÁRIO:</label>
                 {{register.tipo_usuario(class_="form-control")}}
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col text-center">
-                <button type="submit" class="btn btn-customized btn_bradesco" style="width: 100px;">Salvar</button>
+                <button type="submit" class="btn btn-customized btn_bradesco" style="width: 100px;">SALVAR</button>
             </div>
         </div>
     </form>

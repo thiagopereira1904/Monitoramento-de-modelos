@@ -19,8 +19,7 @@ def login_post():
     senha = form.senha.data
     sql = "SELECT * FROM usuario WHERE numFunc_us = (?) AND senha_us = (?);"
     cursor.execute(sql, [usuario, senha])
-    res = cursor.fetchone()
-    print(res)
+    res = cursor.fetchone() 
     if res != None:
         usuario = Usuario()
         usuario.set_usuario(res[0], res[1], res[2], res[3], res[4], res[5], res[6], res[7])      

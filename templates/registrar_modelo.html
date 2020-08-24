@@ -4,69 +4,43 @@
 <div class="container justify-content-center shadow p-3 mb-5 bg-white rounded">
     <p class="title_form">Registrar novo modelo:</p>
     <form action="" method="post">
+        {{ form.csrf_token }}
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <label for="">Nome:</label>
-                <input class="form-control" type="text"></input>
+                {{form.nome_modelo(class_="form-control")}}
             </div>
+            <div class="col-lg-2">
+                <label for="inputEstado">Dia Recorrência</label>
+                {{form.diar_modelo(class_="form-control")}}
+            </div>
+            <div class='col-lg-3'>
+                <label for="data-pagamento">Área demandante:</label>
+                {{form.area_demandante(class_="form-control")}}
+            </div>
+            <div class='col-lg-3'>
+                <label for="data-pagamento">Jornada:</label>
+                {{form.jornada(class_="form-control")}}
+            </div>
+        </div>
+        <div class="row">
             <div class="col-lg-3">
                 <label for="inputEstado">Tipo:</label>
-                <select id="inputEstado" class="form-control">
-                    <option selected>Escolher...</option>
-                    <option>Água</option>
-                    <option>Fogo</option>
-                    <option>...</option>
-                </select>
+                {{form.tipo_modelo(class_="form-control")}}
             </div>
             <div class="col-lg-3">
-                <label for="inputEstado">Área demandante:</label>
-                <select id="inputEstado" class="form-control">
-                    <option selected>Escolher...</option>
-                    <option>DGD</option>
-                    <option>...</option>
-                </select>
+                <label for="">Responsável:</label>
+                {{form.responsavel(class_="form-control")}}
             </div>
-            <div class="col-lg-3">
-                <label for="inputEstado">Jornada:</label>
-                <select id="inputEstado" class="form-control">
-                    <option selected>Escolher...</option>
-                    <option>Cavaleiros do zodíaco</option>
-                    <option>Super 11</option>
-                    <option>...</option>
-                </select>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3">
-                <label for="inputEstado">Responsável:</label>
-                <select id="inputEstado" class="form-control">
-                    <option selected>Escolher...</option>
-                    <option>Thiago Pereira da Silva</option>
-                    <option>Bianca Sartori Abreu</option>
-                    <option>...</option>
-                </select>
-            </div>
-            <div class='col-lg-3'>
-                <label for="data-pagamento">Data início:</label>
-                <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-            </div>
-            <div class='col-lg-3'>
-                <label for="data-pagamento">Data fim:</label>
-                <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-            </div>
-            <div class="col-lg-3">
-                <label for="">Dia de recorrência mensal:</label>
-                <input class="form-control" type="number" min="1" max="31"></input>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-9">
-                <label for="exampleFormControlTextarea1">Observações:</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-            </div>
-            <div class="col-lg-3">
-                <label for="">Nome do arquivo (base_auxiliar):</label>
+            <div class="col-lg-6">
+                <label for="">Nome do arquivo (base_auxiliar) *:</label>
                 <input class="form-control" type="text" placeholder="nome_arquivo.csv"></input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <label for="inputEstado">Observações:</label>
+                {{form.obs_modelo(class_="form-control")}}
             </div>
         </div>
         <br>

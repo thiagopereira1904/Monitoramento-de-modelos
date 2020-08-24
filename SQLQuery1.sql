@@ -140,9 +140,11 @@ CREATE TABLE usuario(
 INSERT INTO usuario (numFunc_us, email_us, nome_us, id_jd, tipo_us)VALUES ('I376231', 'THIAGO.PEREIRA@BRADESCO.COM.BR', 'THIAGO PEREIRA DA SILVA', 1, 1);
 
 SELECT * FROM usuario;
+SELECT usuario.numFunc_us AS N_FUNC, usuario.email_us AS EMAIL, usuario.nome_us AS NOME, jornada.nome_jd as JORNADA FROM usuario INNER JOIN jornada ON usuario.id_jd = jornada.id_jd;
+ALTER TABLE usuario DROP COLUMN tipo_us;
 
 SELECT * FROM usuario WHERE numFunc_us = 'I376231' AND senha_us = 'admin';
-DELETE FROM usuario WHERE id_us = 2;
+DELETE FROM usuario WHERE id_us = 13;
 DROP TABLE usuario;
 
 
@@ -168,4 +170,5 @@ INSERT INTO tipo_usuario VALUES ('COMUM'), ('ADMINISTRADOR');
 
 SELECT * FROM tipo_usuario;
 
+DELETE FROM tipo_usuario WHERE id_tu = 3;
 
