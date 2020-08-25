@@ -144,11 +144,11 @@ SELECT usuario.numFunc_us AS N_FUNC, usuario.email_us AS EMAIL, usuario.nome_us 
 ALTER TABLE usuario DROP COLUMN tipo_us;
 
 SELECT * FROM usuario WHERE numFunc_us = 'I376231' AND senha_us = 'admin';
-DELETE FROM usuario WHERE id_us = 13;
+DELETE FROM usuario WHERE id_us > 1;
 DROP TABLE usuario;
 
 
-UPDATE usuario SET numFunc_us = 'i376123' WHERE id_us = 1;
+UPDATE usuario SET numFunc_us = 'I376123' WHERE numFunc_us = 'i376123';
 
 ALTER TABLE usuario ADD id_fu INTEGER;
 ALTER TABLE usuario ADD FOREIGN KEY(id_fu) REFERENCES funcao_usuario(id_fu);
@@ -170,5 +170,5 @@ INSERT INTO tipo_usuario VALUES ('COMUM'), ('ADMINISTRADOR');
 
 SELECT * FROM tipo_usuario;
 
-DELETE FROM tipo_usuario WHERE id_tu = 3;
+DELETE FROM tipo_usuario WHERE id_tu = 4;
 
